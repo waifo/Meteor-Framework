@@ -1,0 +1,41 @@
+<head>
+  <title>Improve each week</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"/>
+  <script src="https://use.edgefonts.net/sofia.js"></script>
+</head>
+
+<body>
+    <br/>
+    <p class="headingFont" align="center">Make the most out of your time - Keep track of your weekly goals</p>
+    <br/><br/>
+
+     <div class="container">
+
+         <form class="form-inline task-form">
+          <div align="center" class="row">
+            <div  class="form-group">
+              <label for="exampleInputName2" class="input-lg">Your Goal</label>
+              <input type="text" class="form-control input-lg" name="task" placeholder="Set your new weekly goal">
+              &nbsp;
+              <button type="submit" class="btn btn-success input-lg">Add</button>
+           </div>
+          </div>
+        </form>
+
+   </div>
+   <br/><br/><br/><br/>
+   <div class="container">
+           {{#each tasks}}
+              {{> displayTask}}
+           {{/each}}
+   </div>
+</body>
+
+<template name="displayTask">
+     <div align="center" class="row col-sm-offset-3">
+        <div class="panel panel-default col-sm-8">
+           <div class="panel-body">{{task}} &nbsp;<code>added at</code> &nbsp;{{createdAt}}</div>
+        </div>
+     </div>
+</template>
